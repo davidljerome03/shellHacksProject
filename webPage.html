@@ -1,1 +1,51 @@
+<!DOCTYPE html>
+<html>
 
+<body>
+
+<h1>Welcome to the Study Lounge!</h1>
+<p>Here at the study lounge, we believe that the best study buddy, is one who matches your style.</p>
+<p>So whether you're looking for someone to study with at your favorite eats, or need someone who has the same course problems as you, we have you covers.</p>
+<form action="" method="post" name = "studyForm">
+<p>We're gonna start collecting some data to cater for your studying needs</p>
+
+<p>What type of cuisine do you like when studying? American, Chinese, Mexican, etc...</p>
+<label for="foodPreference">What cuisine: </label>
+<input type="text" id ="foodPreference" name="foodPreference">
+
+<p>Thanks! Now on to noise level! What do you look for when from an atmosphere when studying? Loud, Idle, Soft, Silent, etc...</p>
+<label for="noiseIntensity">What level of noise do you like: </label>
+<input type="text" id="noiseIntensity" name="noiseIntensity">
+
+<p>What are your conversation preferences when studying?</p>
+<label for="conversationLevel">How much conversation do you like: </label>
+<input type="text" id="conversationLevel" name="conversationLevel">
+
+<p>Now one of the most important things in studying is your topic of study, what topic are you looking to review?</p>
+<label for="topicStudying">What topic are you studying: </label>
+<input type="text" id="topicStudying" name="topicStudying">
+
+<p>Then lastly, what's your preferred time to study?</p>
+<label for="studySchedule">What time do you like to study: </label>
+<input type="text" id="studySchedule" name="studySchedule">
+
+<input type="submit" value="Submit">
+
+</form>
+
+<script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbzTHmlb7MlSayZv5oWrluVXmRX6DQI_Itv0-HNyfzQbuRTV2Kh6lDnS8UI_rpAwADYMjw/exec"
+    const form = document.forms['studyForm']
+
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => alert("Thank you! Your form is submitted successfully."))
+        .then(() => { windows.location.reload(); })
+        .catch(error => console.error('Error!', error.message))
+    })
+</script>
+
+</body>
+
+</html>
