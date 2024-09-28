@@ -1,6 +1,7 @@
 import os
 import requests
 import sys
+import shutil
 
 
 
@@ -16,10 +17,10 @@ def getGoogleSheet(spreadsheet_id, outDir, outFile):
         print(f'Error downloading Google Sheet: {response.status_code}')
         sys.exit(1)
 
-if os.path.isdir(tmp):
-    shutil.rmtree(tmp)
+if os.path.isdir('shellHacksProject/tmp'):
+    shutil.rmtree('shellHacksProject/tmp')
 
-outDir = 'tmp/'
+outDir = 'shellHacksProject/tmp'
 
 os.makedirs(outDir, exist_ok = True)
 filepath = getGoogleSheet('1aHN-1YITwi3YZwLSmuqnLmWapImw_xviDkzUHoiK9y4', outDir, "devnodes.csv")
