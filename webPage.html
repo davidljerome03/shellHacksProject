@@ -1,49 +1,60 @@
 <!DOCTYPE html>
 <html>
-
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Studdy Buddy Form</title>
+</head>
 <body>
 
 <h1>Welcome to the Study Lounge!</h1>
 <p>Here at the study lounge, we believe that the best study buddy, is one who matches your style.</p>
 <p>So whether you're looking for someone to study with at your favorite eats, or need someone who has the same course problems as you, we have you covers.</p>
-<form action="" method="post" name = "studyForm">
+<form action="https://sheetdb.io/api/v1/b5bdwhbmmacim" method="post" name = "sheetdb-form">
 <p>We're gonna start collecting some data to cater for your studying needs</p>
+
+<p>First things first, what's your name?</p>
+<label for="firstName">First Name: </label>
+<input type="text" id="firstName" name="data[firstName]">
+<label for="lastName">Last Name: </label>
+<input type="text" id="lastName" name="data[lastName]">
+<label for="contactInfo">Email: </label>
+<input type="text" id="contactInfo" name="data[contactInfo]">
 
 <p>What type of cuisine do you like when studying? American, Chinese, Mexican, etc...</p>
 <label for="foodPreference">What cuisine: </label>
-<input type="text" id ="foodPreference" name="foodPreference">
+<input type="text" id ="foodPreference" name="data[foodPreference]">
 
 <p>Thanks! Now on to noise level! What do you look for when from an atmosphere when studying? Loud, Idle, Soft, Silent, etc...</p>
 <label for="noiseIntensity">What level of noise do you like: </label>
-<input type="text" id="noiseIntensity" name="noiseIntensity">
+<input type="text" id="noiseIntensity" name="data[noiseIntensity]">
 
 <p>What are your conversation preferences when studying?</p>
 <label for="conversationLevel">How much conversation do you like: </label>
-<input type="text" id="conversationLevel" name="conversationLevel">
+<input type="text" id="conversationLevel" name="data[conversationLevel]">
 
 <p>Now one of the most important things in studying is your topic of study, what topic are you looking to review?</p>
 <label for="topicStudying">What topic are you studying: </label>
-<input type="text" id="topicStudying" name="topicStudying">
+<input type="text" id="topicStudying" name="data[topicStudying]">
 
 <p>Then lastly, what's your preferred time to study?</p>
 <label for="studySchedule">What time do you like to study: </label>
-<input type="text" id="studySchedule" name="studySchedule">
+<input type="text" id="studySchedule" name="data[studySchedule]">
 
-<input type="submit" value="Submit">
+<button type="submit" name="Submit">Submit Data</button>
 
 </form>
 
 <script>
-    const scriptURL = "https://script.google.com/macros/s/AKfycbzTHmlb7MlSayZv5oWrluVXmRX6DQI_Itv0-HNyfzQbuRTV2Kh6lDnS8UI_rpAwADYMjw/exec"
-    const form = document.forms['studyForm']
+        var form = document.getElementById('sheetdb-form');
 
-    form.addEventListener('submit', e => {
-        e.preventDefault()
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => alert("Thank you! Your form is submitted successfully."))
-        .then(() => { windows.location.reload(); })
-        .catch(error => console.error('Error!', error.message))
-    })
+    form.addEventListener('Submit', e => {
+        e.preventDefault();
+        fetch(form.action, {method: "POST", body: new FormData(document.getElementById("sheetdb-form")),
+        }).then(response => response.json())
+        .then((html) => {window.open('d.html', '_blank');}
+    );
+    });
 </script>
 
 </body>
