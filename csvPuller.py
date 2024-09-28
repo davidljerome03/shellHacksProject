@@ -2,6 +2,8 @@ import os
 import requests
 import sys
 
+
+
 def getGoogleSheet(spreadsheet_id, outDir, outFile):
     url = f'https://docs.google.com/spreadsheets/d/1aHN-1YITwi3YZwLSmuqnLmWapImw_xviDkzUHoiK9y4/export?format=csv'
     response = requests.get(url)
@@ -13,6 +15,9 @@ def getGoogleSheet(spreadsheet_id, outDir, outFile):
     else:
         print(f'Error downloading Google Sheet: {response.status_code}')
         sys.exit(1)
+
+if os.path.isdir(tmp):
+    shutil.rmtree(tmp)
 
 outDir = 'tmp/'
 
