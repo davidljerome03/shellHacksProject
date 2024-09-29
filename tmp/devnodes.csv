@@ -1,7 +1,7 @@
-firstName,lastName,contactInfo,foodPreference,noiseIntensity,conversationLevel,topicStudying,studySchedule
-Bob,Jerome,bob.jerome@gmail.com,American,Silent,Idle,Physics,Early Morning
-Kyle,Carter,kmoney@gmail.com,American,Silent,Idle,Physics,Early Morning
-David,Jerome,kool.kid@gmail.com,Chinese,Super Loud,Personal,Physical Education,Never
-Kyle,Brown,kbrown@gmail.com,American,Loud,Idle,Physics,Early Morning
-Bob,Builder,whatcanthefix@hotmail.com,American,Construction,No human communication,Construction,High noon
-Trevor,Lawrence,tlaw@gmail.com,American,Loud,Idle,Playbook,All day
+firstName,lastName,contactInfo,foodPreference,noiseIntensity,conversationLevel,topicStudying,studySchedule,locationState,locationCity
+Bob,Jerome,bob.jerome@gmail.com,American,Silent,Idle,Physics,Early Morning,Florida,Miami
+Kyle,Carter,kmoney@gmail.com,American,Silent,Idle,Physics,Early Morning,Florida,Miami
+David,Jerome,kool.kid@gmail.com,Chinese,Super Loud,Personal,Physical Education,Never,Florida,Miami
+Kyle,Brown,kbrown@gmail.com,American,Loud,Idle,Physics,Early Morning,Florida,Jacksonvile
+Bob,Builder,whatcanthefix@hotmail.com,American,Construction,No human communication,Construction,High noon,Florida,Jacksonvile
+Trevor,Lawrence,tlaw@gmail.com,American,Loud,Idle,Playbook,All day,Florida,Jacksonvile
