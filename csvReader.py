@@ -41,7 +41,7 @@ def getPreferenceByEmail(csv_file, email, header_name):
 
 
 
-def collect_rows_with_keyword(csv_file, keyword):
+def collect_rows_with_keyword(csv_file, keyword, emailToOmit):
     collected_data = []
     keyword_lower = keyword.lower()  # Convert the keyword to lowercase
 
@@ -57,6 +57,10 @@ def collect_rows_with_keyword(csv_file, keyword):
 
         # Iterate through each row in the CSV file
         for row in reader:
+
+            if emailToOmit in row:
+                continue
+
             # Check if the keyword is present in any column of the row (case insensitive)
             if any(keyword_lower in cell.lower() for cell in row):
                 collected_data.append(row)
