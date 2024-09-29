@@ -1,1 +1,28 @@
 <!DOCTYPE html>
+<head></head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Study Buddy Form</title>
+    <!-- <link rel="stylesheet" href="webPage.css"> -->
+</head>
+
+<title>Study Buddy Matching!</title>
+<body>
+    <p>Now that we've gone ahead and found out a little bit about you</p>
+    <p>Let's try and see if there's any possible study buddies we can link you with!</p>
+
+    <p>First, let's go ahead and collect your email so we can make sure we have the right person</p>
+    <form name="search" action="/cgi-bin/csvReader.py" method="get">
+        <input type="text" id="userEmail" name="userEmail">
+        <p>Now, go ahead and select what you prioritize when making a study date!</p>
+        <label for="preference">Choose your preference:</label>
+        <select name="preference" id="preference">
+            <option value="food">Food Location</option>
+            <option value="noise">Noise Level</option>
+            <option value="conversationLevel">Conversation Amount</option>
+            <option value="studyTime">Study Time</option>
+        </select>
+        <button type="submit" name="Submit">Search</button>
+    </form>
+
+</body>
