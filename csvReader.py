@@ -25,7 +25,7 @@ def collect_rows_with_keyword(csv_file, keyword):
 
 if __name__ == "__main__":
     # Define the CSV file with the full path
-    csv_file = 'tmp/devnodes.csv'  # Update with your path
+    csv_file = 'shellHacksProject/tmp/devnodes.csv'  # Update with your path
 
     # Optional: Print the current working directory
     print("Current Working Directory:", os.getcwd())
